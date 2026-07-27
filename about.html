@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - FoodBridge</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="image/imglogo.png" alt="FoodBridge Logo"/>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="newhome.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <section class="about-hero">
+    <div class="overlay"></div>
+    <div class="about-text">
+      <h1>About <span>FoodBridge</span></h1>
+      <p>Connecting surplus food to those who need it — bridging kindness, sustainability, and technology.</p>
+    </div>
+  </section>
+
+  <!-- Mission, Vision & Story -->
+  <section class="about-content">
+    <div class="container">
+      <h2>Our Story</h2>
+      <p>
+        Every year, tons of perfectly edible food goes to waste while millions go hungry. 
+        <strong>FoodBridge</strong> was created to solve this problem — by connecting donors such as hotels, restaurants, and individuals 
+        directly with NGOs that distribute food to needy communities.
+      </p>
+
+      <h2>Our Mission</h2>
+      <p>
+        To create a sustainable, tech-driven platform that minimizes food waste and ensures every extra meal finds a hungry plate.
+      </p>
+
+      <h2>Our Vision</h2>
+      <p>
+        A future where no food is wasted and no person sleeps hungry — a bridge of humanity powered by innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats / Impact Section -->
+  <section class="impact-section">
+    <div class="impact-card">
+      <h3>120+</h3>
+      <p>NGOs Connected</p>
+    </div>
+    <div class="impact-card">
+      <h3>3,500+</h3>
+      <p>Food Donations Completed</p>
+    </div>
+  </section>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="hideLoginModal()">&times;</span>
+      <h2>Access Dashboard</h2>
+      <p>Choose your account type to continue:</p>
+      
+      <div class="auth-section">
+        <div class="auth-options">
+          <button onclick="goToSignup('donor')" class="auth-btn donor-btn">👥 Donor Portal</button>
+          <button onclick="goToSignup('ngo')" class="auth-btn ngo-btn">🏢 NGO Portal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FoodBridge. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="modal.js"></script>
+  <link rel="stylesheet" href="modal.css">
+
+</body>
+</html>

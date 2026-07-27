@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodBridge - Home</title>
+  <link rel="stylesheet" href="contact.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="image/imglogo.png" alt="FoodBridge Logo"/>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="newhome.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="contact.html"class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <h1>Get in Touch</h1>
+    <p>We'd love to hear from you. For inquiries, suggestions, or collaborations, please reach out via email.</p>
+  </section>
+
+
+
+<div class="flex items-center min-h-screen bg-gray-50">
+  <div class="container mx-auto">
+    <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+      <div class="text-center">
+        <h1 class="my-3 text-3xl font-semibold text-gray-700">
+          Contact Us
+        </h1>
+        <p class="text-gray-600">
+          Fill up the form below to send us a message.
+        </p>
+      </div>
+      <div class="m-7">
+        <form id="contactForm">
+
+          <div class="mb-6">
+            <label for="name" class="block mb-2 text-sm text-gray-600">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="John Doe" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 bg-white text-gray-900" />
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block mb-2 text-sm text-gray-600">Email Address</label>
+            <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Email must end with @gmail.com" placeholder="you@gmail.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 bg-white text-gray-900" />
+          </div>
+          <div class="mb-6">
+            <label for="phone" class="block mb-2 text-sm text-gray-600">Phone Number</label>
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" maxlength="10" minlength="10" title="Please enter exactly 10 digits" placeholder="Enter 10 digits" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 bg-white text-gray-900" />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block mb-2 text-sm text-gray-600">Your Message</label>
+            <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 bg-white text-gray-900" required></textarea>
+          </div>
+          <div class="mb-6">
+            <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
+              Send Message
+            </button>
+          </div>
+          <p class="text-base text-center text-gray-600" id="result"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  <!-- Contact Section
+  <section class="contact-section">
+    <p>Email us at <a href="mailto:masharibusman@gmail.com">masharibusman@gmail.com</a></p>
+    <p>Email us at <a href="mailto:mayankrai0725@gmail.com">mayankrai0725@gmail.com</a></p>
+  </section> -->
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 FoodBridge. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#">🌐 Instagram</a>
+      <a href="#">📘 Facebook</a>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="hideLoginModal()">&times;</span>
+      <h2>Access Dashboard</h2>
+      <p>Choose your account type to continue:</p>
+      
+      <div class="auth-section">
+        <div class="auth-options">
+          <button onclick="goToSignup('donor')" class="auth-btn donor-btn">👥 Donor Portal</button>
+          <button onclick="goToSignup('ngo')" class="auth-btn ngo-btn">🏢 NGO Portal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="modal.js"></script>
+  <script src="contact.js"></script>
+  <link rel="stylesheet" href="modal.css">
+</body>
+</html>
+

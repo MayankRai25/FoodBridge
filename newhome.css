@@ -1,0 +1,449 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: relative; /* For logo positioning */
+  display: flex;
+  justify-content: center; /* Keep links centered */
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #0288d1;
+  border-radius: 12px;
+  width: max-content; /* Shrinks navbar to content width */
+  margin: 15px auto; /* Center the navbar horizontally */
+}
+
+.logo {
+  position: absolute;
+  left: -375px; /* Move logo to left side */
+}
+
+.logo img {
+  height: 200px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: #fff;
+  color: #0288d1;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  background: url('image/newbnr.jpg') top center /cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin: 15px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  border-radius: 12px;
+}
+
+.banner-text {
+  
+  position: absolute;
+  left: -0px;
+  text-align:left;
+  color: #3480d2;
+}
+
+.banner-text h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.banner-text p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.btn-group .btn {
+  background-color: #0288d1;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  margin: 5px;
+  transition: background 0.3s;
+}
+
+.btn-group .btn.secondary {
+  background-color: #0277bd;
+}
+
+.btn-group .btn:hover {
+  background-color: #01579b;
+}
+
+/* How It Works Section */
+.how-it-works {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.how-it-works h2 {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #0288d1;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.step .emoji {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  margin-bottom: 10px;
+  color: #0277bd;
+}
+
+.step p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Stats and Top Donators Section */
+.impact-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.stats-card, .donators-card {
+  background: #0288d1;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.stats-card h2, .donators-card h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+}
+
+.stats-card p, .donators-card p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  background: #0277bd;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer .footer-links {
+  margin-top: 15px;
+}
+
+footer .footer-links a {
+  color: #b3e5fc;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: text-decoration 0.3s;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ============================= */
+/* Donor Page Styles */
+/* ============================= */
+
+/* .container {
+  width: 350px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.tabs label {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.form {
+  display: none;
+}
+
+#tab-login:checked ~ .forms #login,
+#tab-signup:checked ~ .forms #signup {
+  display: block;
+}
+
+.forms form input,
+.forms form button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.forms form button {
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.forms form button:hover {
+  background: #0056b3;
+}
+
+/* Highlight active tab */
+/* #tab-login:checked ~ .tabs label[for="tab-login"],
+#tab-signup:checked ~ .tabs label[for="tab-signup"] {
+  background: #007BFF;
+  color: #fff;
+} */ 
+
+
+/* new css */
+/* Container */
+/* Scope everything to donor form container */
+/* Container */
+/* * {
+  box-sizing: border-box;
+} */
+
+.container {
+  width: 800px;
+  height: 480px;
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+              0 10px 10px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Forms container */
+.forms-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: #fff;
+  z-index: 2;
+}
+
+.form {
+ position: absolute;
+  text-align: center;
+  width: 80%;
+}
+
+.form h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form input {
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 10px;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #3e64b7;
+  background-color: #0277bd;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Text panel (overlay part) */
+.text-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to right, #0288d1, #3e64b7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+}
+
+.text {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.switch-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 30px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hide signup form and text initially */
+.signup-form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.signup-text {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+/* When signup is checked */
+#signup:checked ~ .forms-container {
+  transform: translateX(100%);
+}
+
+#signup:checked ~ .forms-container .login-form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#signup:checked ~ .forms-container .signup-form {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#signup:checked ~ .text-panel {
+  transform: translateX(-100%);
+}
+
+#signup:checked ~ .text-panel .login-text {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+#signup:checked ~ .text-panel .signup-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Smooth transitions for switching */
+.transition {
+  transition: all 0.6s ease-in-out;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NGO Dashboard - FoodBridge</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="image/imglogo.png" alt="FoodBridge Logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="newhome.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="ngo-dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#" onclick="logout()" style="background: #f44336; color: white;">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hidden Radio Buttons -->
+  <input type="radio" id="tab-overview" name="tab" checked />
+  <input type="radio" id="tab-available" name="tab" />
+
+  <!-- Main Dashboard Layout -->
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>NGO Menu</h3>
+      <ul>
+        <li><label for="tab-overview" class="tab-btn active">Overview</label></li>
+        <li><label for="tab-available" class="tab-btn">Available Food</label></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Overview Section -->
+      <section class="tab-content overview">
+        <h2>NGO Dashboard Overview</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Food Requests Made</h3>
+            <p>15</p>
+          </div>
+          <div class="card">
+            <h3>Food Received</h3>
+            <p>12</p>
+          </div>
+          <div class="card">
+            <h3>Pending Requests</h3>
+            <p>3</p>
+          </div>
+        </div>
+
+        <section class="recent">
+          <h3>Recent Food Requests</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Food Item</th>
+                <th>Quantity Requested</th>
+                <th>Status</th>
+                <th>Accepted By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rice & Curry</td>
+                <td>20 plates</td>
+                <td><span class="status accepted">Received</span></td>
+                <td>Local Restaurant</td>
+              </tr>
+              <tr>
+                <td>Bread & Vegetables</td>
+                <td>15 packs</td>
+                <td><span class="status pending">Requested</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Chapati & Dal</td>
+                <td>25 meals</td>
+                <td><span class="status accepted">Received</span></td>
+                <td>Community Kitchen</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+     <!-- Available Food Section -->
+<section class="tab-content add-food">
+  <h2>Available Food Donations</h2>
+  <div class="food-list">
+    <div class="food-item">
+      <h4>Rice & Curry</h4>
+      <p>Quantity: 30 plates | Location: Downtown Restaurant</p>
+      <div class="btn-group">
+        <button class="btn accept-btn" onclick="acceptFood(this)">Accept</button>
+        <button class="btn reject-btn" onclick="rejectFood(this)">Reject</button>
+      </div>
+    </div>
+    <div class="food-item">
+      <h4>Fresh Vegetables</h4>
+      <p>Quantity: 20 kg | Location: Farmer's Market</p>
+      <div class="btn-group">
+        <button class="btn accept-btn" onclick="acceptFood(this)">Accept</button>
+        <button class="btn reject-btn" onclick="rejectFood(this)">Reject</button>
+      </div>
+    </div>
+    <div class="food-item">
+      <h4>Bread & Pastries</h4>
+      <p>Quantity: 50 items | Location: Local Bakery</p>
+      <div class="btn-group">
+        <button class="btn accept-btn" onclick="acceptFood(this)">Accept</button>
+        <button class="btn reject-btn" onclick="rejectFood(this)">Reject</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2>Login to Dashboard</h2>
+      <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required />
+        
+        <label>Password</label>
+        <input type="password" id="loginPassword" required />
+        
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

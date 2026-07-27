@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - FoodBridge</title>
+</head>
+<body>
+  <script src="auth.js"></script>
+  <script>
+    // Redirect to appropriate dashboard based on user type
+    const user = getCurrentUser();
+    if (user) {
+      if (user.type === 'donor') {
+        window.location.href = 'donor_dashboard.html';
+      } else if (user.type === 'ngo') {
+        window.location.href = 'ngo_dashboard.html';
+      }
+    } else {
+      // Not logged in, redirect to home with login prompt
+      window.location.href = 'newhome.html';
+      alert('Please login first to access dashboard');
+    }
+  </script>
+</body>
+</html>

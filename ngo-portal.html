@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Signup Form</title>
+  <link rel="stylesheet" href="newhome.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="image/imglogo.png" alt="FoodBridge Logo"/>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="newhome.html" >Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+<div class="container">
+  <!-- Hidden radio buttons -->
+  <input type="radio" name="tab" id="login" checked>
+  <input type="radio" name="tab" id="signup">
+
+  <!-- Form area -->
+  <div class="forms-container">
+    <form class="form login-form">
+      <h1>NGO Login</h1>
+      <input type="email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Email must end with @gmail.com" placeholder="Email" required tabindex="1">
+      <input type="password" placeholder="Password" required tabindex="2">
+      <button type="submit" tabindex="3">Log In</button>
+      <p style="font-size: 12px; margin-top: 10px;"><a href="contact.html" style="color: #0288d1;">Forgot Password? Contact Admin</a></p>
+    </form>
+
+    <form class="form signup-form">
+      <h1>Create Account</h1>
+      <input type="text" placeholder="Organization Name" required tabindex="4">
+      <input type="text" placeholder="Registration Number" required tabindex="5">
+      <input type="email" pattern="[a-zA-Z0-9._%+-]+@gmail\.com" title="Email must end with @gmail.com" placeholder="Email" required tabindex="6">
+       <input type="tel" pattern="[0-9]{10}" maxlength="10" minlength="10" placeholder="Please enter 10 digits" required>
+       <input type="text" placeholder="Address" required tabindex="8">
+      <input type="password" placeholder="Password" required tabindex="9">
+      <button type="submit" tabindex="10">Sign Up</button>
+    </form>
+  </div>
+
+  <!-- Sliding text panels -->
+  <div class="text-panel">
+    <div class="text login-text">
+      <h1>Welcome Back!</h1>
+      <p>To stay connected, please log in with your credentials</p>
+      <label for="signup" class="switch-btn">Sign Up</label>
+    </div>
+
+    <div class="text signup-text">
+      <h1>Hello, Friend!</h1>
+      <h1>Signup as NGO</h1>
+      <p>Enter your details and start your journey with us</p>
+      <label for="login" class="switch-btn">Log In</label>
+    </div>
+  </div>
+</div>
+
+<script src="ngo.js"></script>
+<script>
+// Clear forms when switching tabs
+document.getElementById('login').addEventListener('change', function() {
+  if (this.checked) {
+    document.querySelector('.signup-form').reset();
+  }
+});
+
+document.getElementById('signup').addEventListener('change', function() {
+  if (this.checked) {
+    document.querySelector('.login-form').reset();
+  }
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodBridge Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="image/imglogo.png" alt="FoodBridge Logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="newhome.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#" onclick="logout()" style="background: #f44336; color: white;">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hidden Radio Buttons -->
+  <input type="radio" id="tab-overview" name="tab" checked />
+  <input type="radio" id="tab-addfood" name="tab" />
+
+  <!-- Main Dashboard Layout -->
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Menu</h3>
+      <ul>
+        <li><label for="tab-overview" class="tab-btn active"> Overview</label></li>
+        <li><label for="tab-addfood" class="tab-btn"> Add New Food</label></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Overview Section -->
+      <section class="tab-content overview">
+        <h2>Dashboard Overview</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Total Donations</h3>
+            <p>38</p>
+          </div>
+          <div class="card">
+            <h3>Accepted by NGOs</h3>
+            <p>25</p>
+          </div>
+          <div class="card">
+            <h3>Pending Requests</h3>
+            <p>13</p>
+          </div>
+        </div>
+
+        <section class="recent">
+          <h3>Recent Donations</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Food Item</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Accepted By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rice & Curry</td>
+                <td>20 plates</td>
+                <td><span class="status accepted">Accepted</span></td>
+                <td>Helping Hands NGO</td>
+              </tr>
+              <tr>
+                <td>Bread & Vegetables</td>
+                <td>10 packs</td>
+                <td><span class="status pending">Pending</span></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Chapati & Dal</td>
+                <td>15 meals</td>
+                <td><span class="status accepted">Accepted</span></td>
+                <td>Seva Foundation</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <!-- Add New Food Section -->
+      <section class="tab-content add-food">
+        <div class="form-header">
+          <h2>🍽️ Add New Food Donation</h2>
+          <p>Help reduce food waste by sharing your surplus food with those in need</p>
+        </div>
+        
+        <div class="form-container">
+          <form id="donationForm">
+            <div class="form-group">
+              <label>👤 Donor Name</label>
+              <input type="text" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label>🥘 Food Name</label>
+              <input type="text" placeholder="e.g., Rice & Curry, Sandwiches, Fresh Vegetables" required />
+            </div>
+
+            <div class="form-group">
+              <label>📊 Quantity</label>
+              <input type="text" placeholder="e.g., 20 plates, 5 kg, 10 servings" required />
+            </div>
+
+            <div class="form-group">
+              <label>📝 Description</label>
+              <textarea placeholder="Describe the food type, expiry details, and any special instructions..." rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>📍 Pickup Location</label>
+              <input type="text" placeholder="Enter complete pickup address" required />
+            </div>
+
+            <div class="form-group">
+              <label>📞 Contact Number</label>
+              <input type="tel" placeholder="Enter your contact number" pattern="[0-9]{10}" maxlength="10" required />
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <span>🚀 Submit Donation</span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- Login Modal -->
+<div id="loginModal" class="modal" style="display: none;">
+   <div class="modal-content">
+    <h2>Login to Dashboard</h2>
+    <form id="loginForm">
+      <label>Email</label>
+      <input type="email" id="loginEmail" required />
+      
+      <label>Password</label>
+      <input type="password" id="loginPassword" required />
+      
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+
+</body>
+</html>
